@@ -1,0 +1,301 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "id": "0c9e9aab",
+   "metadata": {},
+   "source": [
+    "# Assignment 11 Solutions"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "0162b0f7",
+   "metadata": {},
+   "source": [
+    "#### 1. Create an assert statement that throws an AssertionError if the variable spam is a negative integer."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "id": "e6f5b282",
+   "metadata": {},
+   "outputs": [
+    {
+     "ename": "AssertionError",
+     "evalue": "Variable Spam should not be a -ve number",
+     "output_type": "error",
+     "traceback": [
+      "\u001b[1;31m---------------------------------------------------------------------------\u001b[0m",
+      "\u001b[1;31mAssertionError\u001b[0m                            Traceback (most recent call last)",
+      "\u001b[1;32m<ipython-input-2-f0ddd2c96b62>\u001b[0m in \u001b[0;36m<module>\u001b[1;34m\u001b[0m\n\u001b[0;32m      1\u001b[0m \u001b[0mspam\u001b[0m \u001b[1;33m=\u001b[0m \u001b[1;33m-\u001b[0m\u001b[1;36m22\u001b[0m\u001b[1;33m\u001b[0m\u001b[1;33m\u001b[0m\u001b[0m\n\u001b[1;32m----> 2\u001b[1;33m \u001b[1;32massert\u001b[0m \u001b[0mspam\u001b[0m \u001b[1;33m>=\u001b[0m\u001b[1;36m0\u001b[0m\u001b[1;33m,\u001b[0m \u001b[1;34m'Variable Spam should not be a -ve number'\u001b[0m\u001b[1;33m\u001b[0m\u001b[1;33m\u001b[0m\u001b[0m\n\u001b[0m",
+      "\u001b[1;31mAssertionError\u001b[0m: Variable Spam should not be a -ve number"
+     ]
+    }
+   ],
+   "source": [
+    "spam = -22\n",
+    "assert spam >=0, 'Variable Spam should not be a -ve number'"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "5a065f8d",
+   "metadata": {},
+   "source": [
+    "#### 2. Write an assert statement that triggers an AssertionError if the variables eggs and bacon contain strings that are the same as each other, even if their cases are different (that is, 'hello' and 'hello' are considered the same, and 'goodbye' and 'GOODbye' are also considered the same)."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 14,
+   "id": "72b4d992",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "def raise_assert(egg,bacon):\n",
+    "    egg = egg.upper()\n",
+    "    bacon = bacon.upper()\n",
+    "    assert not(egg == bacon), 'Eggs/Bacon should not be same, which are same now'"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 12,
+   "id": "eaf13fbe",
+   "metadata": {},
+   "outputs": [
+    {
+     "ename": "AssertionError",
+     "evalue": "Eggs/Bacon should not be same, which are same now",
+     "output_type": "error",
+     "traceback": [
+      "\u001b[1;31m---------------------------------------------------------------------------\u001b[0m",
+      "\u001b[1;31mAssertionError\u001b[0m                            Traceback (most recent call last)",
+      "\u001b[1;32m<ipython-input-12-66993e9183bf>\u001b[0m in \u001b[0;36m<module>\u001b[1;34m\u001b[0m\n\u001b[1;32m----> 1\u001b[1;33m \u001b[0mraise_assert\u001b[0m\u001b[1;33m(\u001b[0m\u001b[1;34m'hello'\u001b[0m\u001b[1;33m,\u001b[0m\u001b[1;34m'HELLO'\u001b[0m\u001b[1;33m)\u001b[0m\u001b[1;33m\u001b[0m\u001b[1;33m\u001b[0m\u001b[0m\n\u001b[0m",
+      "\u001b[1;32m<ipython-input-11-fa875d6def57>\u001b[0m in \u001b[0;36mraise_assert\u001b[1;34m(egg, bacon)\u001b[0m\n\u001b[0;32m      6\u001b[0m     \u001b[0megg\u001b[0m \u001b[1;33m=\u001b[0m \u001b[0megg\u001b[0m\u001b[1;33m.\u001b[0m\u001b[0mupper\u001b[0m\u001b[1;33m(\u001b[0m\u001b[1;33m)\u001b[0m\u001b[1;33m\u001b[0m\u001b[1;33m\u001b[0m\u001b[0m\n\u001b[0;32m      7\u001b[0m     \u001b[0mbacon\u001b[0m \u001b[1;33m=\u001b[0m \u001b[0mbacon\u001b[0m\u001b[1;33m.\u001b[0m\u001b[0mupper\u001b[0m\u001b[1;33m(\u001b[0m\u001b[1;33m)\u001b[0m\u001b[1;33m\u001b[0m\u001b[1;33m\u001b[0m\u001b[0m\n\u001b[1;32m----> 8\u001b[1;33m     \u001b[1;32massert\u001b[0m \u001b[1;32mnot\u001b[0m\u001b[1;33m(\u001b[0m\u001b[0megg\u001b[0m \u001b[1;33m==\u001b[0m \u001b[0mbacon\u001b[0m\u001b[1;33m)\u001b[0m\u001b[1;33m,\u001b[0m \u001b[1;34m'Eggs/Bacon should not be same, which are same now'\u001b[0m\u001b[1;33m\u001b[0m\u001b[1;33m\u001b[0m\u001b[0m\n\u001b[0m",
+      "\u001b[1;31mAssertionError\u001b[0m: Eggs/Bacon should not be same, which are same now"
+     ]
+    }
+   ],
+   "source": [
+    "raise_assert('hello','HELLO')"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 13,
+   "id": "9289ae52",
+   "metadata": {},
+   "outputs": [
+    {
+     "ename": "AssertionError",
+     "evalue": "Eggs/Bacon should not be same, which are same now",
+     "output_type": "error",
+     "traceback": [
+      "\u001b[1;31m---------------------------------------------------------------------------\u001b[0m",
+      "\u001b[1;31mAssertionError\u001b[0m                            Traceback (most recent call last)",
+      "\u001b[1;32m<ipython-input-13-5322ce220e06>\u001b[0m in \u001b[0;36m<module>\u001b[1;34m\u001b[0m\n\u001b[1;32m----> 1\u001b[1;33m \u001b[0mraise_assert\u001b[0m\u001b[1;33m(\u001b[0m\u001b[1;34m'goodbye'\u001b[0m\u001b[1;33m,\u001b[0m\u001b[1;34m'GOODbye'\u001b[0m\u001b[1;33m)\u001b[0m\u001b[1;33m\u001b[0m\u001b[1;33m\u001b[0m\u001b[0m\n\u001b[0m",
+      "\u001b[1;32m<ipython-input-11-fa875d6def57>\u001b[0m in \u001b[0;36mraise_assert\u001b[1;34m(egg, bacon)\u001b[0m\n\u001b[0;32m      6\u001b[0m     \u001b[0megg\u001b[0m \u001b[1;33m=\u001b[0m \u001b[0megg\u001b[0m\u001b[1;33m.\u001b[0m\u001b[0mupper\u001b[0m\u001b[1;33m(\u001b[0m\u001b[1;33m)\u001b[0m\u001b[1;33m\u001b[0m\u001b[1;33m\u001b[0m\u001b[0m\n\u001b[0;32m      7\u001b[0m     \u001b[0mbacon\u001b[0m \u001b[1;33m=\u001b[0m \u001b[0mbacon\u001b[0m\u001b[1;33m.\u001b[0m\u001b[0mupper\u001b[0m\u001b[1;33m(\u001b[0m\u001b[1;33m)\u001b[0m\u001b[1;33m\u001b[0m\u001b[1;33m\u001b[0m\u001b[0m\n\u001b[1;32m----> 8\u001b[1;33m     \u001b[1;32massert\u001b[0m \u001b[1;32mnot\u001b[0m\u001b[1;33m(\u001b[0m\u001b[0megg\u001b[0m \u001b[1;33m==\u001b[0m \u001b[0mbacon\u001b[0m\u001b[1;33m)\u001b[0m\u001b[1;33m,\u001b[0m \u001b[1;34m'Eggs/Bacon should not be same, which are same now'\u001b[0m\u001b[1;33m\u001b[0m\u001b[1;33m\u001b[0m\u001b[0m\n\u001b[0m",
+      "\u001b[1;31mAssertionError\u001b[0m: Eggs/Bacon should not be same, which are same now"
+     ]
+    }
+   ],
+   "source": [
+    "raise_assert('goodbye','GOODbye')"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "8762fb8e",
+   "metadata": {},
+   "source": [
+    "#### 3. Create an assert statement that throws an AssertionError every time."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 9,
+   "id": "90315686",
+   "metadata": {},
+   "outputs": [
+    {
+     "ename": "AssertionError",
+     "evalue": "Always Shows Assertion Error",
+     "output_type": "error",
+     "traceback": [
+      "\u001b[1;31m---------------------------------------------------------------------------\u001b[0m",
+      "\u001b[1;31mAssertionError\u001b[0m                            Traceback (most recent call last)",
+      "\u001b[1;32m<ipython-input-9-b25c0da8a33f>\u001b[0m in \u001b[0;36m<module>\u001b[1;34m\u001b[0m\n\u001b[0;32m      1\u001b[0m \u001b[1;32mdef\u001b[0m \u001b[0massert_always\u001b[0m\u001b[1;33m(\u001b[0m\u001b[1;33m)\u001b[0m\u001b[1;33m:\u001b[0m\u001b[1;33m\u001b[0m\u001b[1;33m\u001b[0m\u001b[0m\n\u001b[0;32m      2\u001b[0m     \u001b[1;32massert\u001b[0m \u001b[1;32mFalse\u001b[0m\u001b[1;33m,\u001b[0m \u001b[1;34m'Always Shows Assertion Error'\u001b[0m\u001b[1;33m\u001b[0m\u001b[1;33m\u001b[0m\u001b[0m\n\u001b[1;32m----> 3\u001b[1;33m \u001b[0massert_always\u001b[0m\u001b[1;33m(\u001b[0m\u001b[1;33m)\u001b[0m\u001b[1;33m\u001b[0m\u001b[1;33m\u001b[0m\u001b[0m\n\u001b[0m",
+      "\u001b[1;32m<ipython-input-9-b25c0da8a33f>\u001b[0m in \u001b[0;36massert_always\u001b[1;34m()\u001b[0m\n\u001b[0;32m      1\u001b[0m \u001b[1;32mdef\u001b[0m \u001b[0massert_always\u001b[0m\u001b[1;33m(\u001b[0m\u001b[1;33m)\u001b[0m\u001b[1;33m:\u001b[0m\u001b[1;33m\u001b[0m\u001b[1;33m\u001b[0m\u001b[0m\n\u001b[1;32m----> 2\u001b[1;33m     \u001b[1;32massert\u001b[0m \u001b[1;32mFalse\u001b[0m\u001b[1;33m,\u001b[0m \u001b[1;34m'Always Shows Assertion Error'\u001b[0m\u001b[1;33m\u001b[0m\u001b[1;33m\u001b[0m\u001b[0m\n\u001b[0m\u001b[0;32m      3\u001b[0m \u001b[0massert_always\u001b[0m\u001b[1;33m(\u001b[0m\u001b[1;33m)\u001b[0m\u001b[1;33m\u001b[0m\u001b[1;33m\u001b[0m\u001b[0m\n",
+      "\u001b[1;31mAssertionError\u001b[0m: Always Shows Assertion Error"
+     ]
+    }
+   ],
+   "source": [
+    "def assert_always():\n",
+    "    assert False, 'Always Shows Assertion Error'\n",
+    "assert_always()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "b7f56f69",
+   "metadata": {},
+   "source": [
+    "#### 4. What are the two lines that must be present in your software in order to call logging.debug()?"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 15,
+   "id": "1a9e6986",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import logging\n",
+    "logging.basicConfig(filename = 'application_log.txt',level=logging.DEBUG, format=' %(asctime)s - %(levelname)s - %(message)s')"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "f5bbd685",
+   "metadata": {},
+   "source": [
+    "#### 5. What are the two lines that your program must have in order to have logging.debug() send a logging message to a file named programLog.txt?"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 38,
+   "id": "b977a8ed",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import logging\n",
+    "logging.basicConfig(filename = 'application_log.txt',level=logging.DEBUG, format=' %(asctime)s - %(levelname)s - %(message)s')\n",
+    "logging.debug(\"Data Inserted Successfully\")\n",
+    "logging.debug('Connection Closed Successfully')"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 39,
+   "id": "94291c02",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      " 2021-10-10 16:32:15,102 - DEBUG - Data Inserted Successfully\n",
+      "\n",
+      " 2021-10-10 16:32:15,102 - DEBUG - Connection Closed Successfully\n",
+      "\n"
+     ]
+    }
+   ],
+   "source": [
+    "file = open(\"./application_log.txt\",\"r\")\n",
+    "for record in file.readlines():\n",
+    "    print(record)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "c68d91af",
+   "metadata": {},
+   "source": [
+    "#### 6. What are the five levels of logging?\n",
+    "**Ans:** The Five levels of Logging provided by python's logging module are \n",
+    "**`CRITICAL(50)`**,\n",
+    "**`ERROR(40)`**,\n",
+    "**`WARNING(30)`**,\n",
+    "**`INFO(20`**,\n",
+    "**`DEBUG(10)`**,\n",
+    "**`NOTSET(0)`**"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "d2c84f71",
+   "metadata": {},
+   "source": [
+    "#### 7. What line of code would you add to your software to disable all logging messages?"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 40,
+   "id": "c475bd12",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "logging.disable = True"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "1a731463",
+   "metadata": {},
+   "source": [
+    "#### 8.Why is using logging messages better than using print() to display the same message?\n",
+    "**Ans:** Post devlopment of your code, you can disable logging messages without removing the logging function, whereas you need to\n",
+    "manually remove print() statements, which is tedious activity. and also print is used when you want to display any particular message or help whereas logging is used to record all events like \n",
+    "error, info, debug messages, timestamps."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "8616cb8d",
+   "metadata": {},
+   "source": [
+    "#### 9.What are the differences between the Step Over, Step In, and Step Out buttons in the debugger?\n",
+    "**Ans:** The Differences between Step Over, Step In, Step Out buttons in debugger are:\n",
+    "1. Step in  -  Step In button will cause the debugger to execute the next line of code and then pause again.\n",
+    "2. Step Over - Step Over button will execute the next line of code, similar to the Step In button. However, if the next line of code is a function call, the Step Over button will “step over” the code in the function. The function’s code will be executed at full speed, and the debugger will pause as soon as the function call returns.         \n",
+    "3. Step out  - Step Out button will cause the debugger to execute lines of code at full speed until it returns from the current function. "
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "25783ac6",
+   "metadata": {},
+   "source": [
+    "#### 10.After you click Continue, when will the debugger stop ?\n",
+    "**Ans:** This will cause the program to continue running normally, without pausing for debugging  untill it terminates or reaches a breakpoint."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "966e93dc",
+   "metadata": {},
+   "source": [
+    "#### 11. What is the concept of a breakpoint?\n",
+    "**Ans:** Breakpoint is a setting on a line of code that causes the debugger to pause when the program execution reaches the line"
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.8.8"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
